@@ -1,0 +1,14 @@
+﻿
+<h2>Products using Kendo Grid</h2>
+
+@(Html.Kendo().Grid((IEnumerable<Models.Product>)ViewBag.Products)
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(product => product.ProductID);
+            columns.Bound(product => product.ProductName);
+            columns.Bound(product => product.UnitsInStock);
+        })
+        .Pageable()
+        .Sortable()
+)

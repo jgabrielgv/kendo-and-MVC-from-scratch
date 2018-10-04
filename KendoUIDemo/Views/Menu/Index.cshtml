@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@(Html.Kendo().Menu()
+    .Name("Menu")
+    .Items(items =>
+    {
+        items.Add()
+            .Text("Products")
+            .Items(children =>
+            {
+                children.Add()
+                    .Text("Furniture")
+                    .Items(innerChildren =>
+                    {
+                        innerChildren.Add().Text("Tables & Chairs")
+                            .Items(subChildren =>
+                            {
+                                subChildren.Add().Text("Too hard");
+                                subChildren.Add().Text("Too soft");
+                                subChildren.Add().Text("Just right");
+                            });
+                        innerChildren.Add().Text("Sofas");
+                        innerChildren.Add().Text("Occasional Furniture");
+                        innerChildren.Add().Text("Childrens Furniture");
+                        innerChildren.Add().Text("Beds");
+                    });
+                children.Add()
+                    .Text("Decor")
+                    .Items(innerChildren =>
+                                {
+                                    innerChildren.Add().Text("Bed Linen");
+                                    innerChildren.Add().Text("Throws");
+                                    innerChildren.Add().Text("Curtains & Blinds");
+                                    innerChildren.Add().Text("Rugs");
+                                    innerChildren.Add().Text("Carpets");
+                                });
+            });
+        items.Add().Text("Events");
+        items.Add().Text("News");
+    })
+)

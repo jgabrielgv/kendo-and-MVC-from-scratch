@@ -1,0 +1,18 @@
+﻿
+<h2>Products page that loads items using Ajax</h2>
+
+@(Html.Kendo().Grid<Models.Product>()
+    .Name("grid")
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Read(read => read.Action("Products_Read", "Home"))
+    )
+    .Columns(columns =>
+    {
+        columns.Bound(product => product.ProductID);
+        columns.Bound(product => product.ProductName);
+        columns.Bound(product => product.UnitsInStock);
+    })
+    .Pageable()
+    .Sortable()
+)

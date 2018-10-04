@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<label id="status"></label>
+@(Html.Kendo().Slider()
+    .Name("slider")
+    .Min(0)
+    .Max(255)
+    .SmallStep(8)
+    .LargeStep(16)
+    .Orientation(SliderOrientation.Vertical)
+    .ShowButtons(false)
+    .TickPlacement(SliderTickPlacement.Both)
+    .Events(e => {
+        e.Change("onChange");
+        e.Slide("onSlide");
+    })
+)
+
+<script type="text/javascript">
+    function onChange(e) {
+        changeStatus(e);
+    }
+    function onSlide(e) {
+        changeStatus(e);
+    }
+    function changeStatus(e) {
+        $('#status').text(e.value);
+    }
+</script>
