@@ -1,5 +1,5 @@
 # Kendo and MVC from scratch
-This solution contains all the exercises done in the [Kendo and MVC from scratch](https://app.pluralsight.com/player?course=kendo-mvc-from-scratch&author=jesse-liberty&name=kendo-mvc-fs-m5&clip=5&mode=live) course from Pluralsight.
+This solution contains all the exercises done in the [Kendo and MVC from scratch](https://www.pluralsight.com/courses/kendo-mvc-from-scratch) course from Pluralsight.
 The Kendo controls used in this project are the trial version of the product, specifically 2018.3.911.
 
 ## Running the Northwind database script
