@@ -17,8 +17,8 @@ namespace KendoUIDemo.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
             builder.ApplyConfiguration(new ProductsConfiguration());
+            base.OnModelCreating(builder);
         }
 
         public virtual DbSet<Product> Products { get; set; }

@@ -40,11 +40,17 @@ namespace KendoUIDemo
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("NorthwindConnection")));
-            services.AddScoped<IProductData, SqlProductData>();
+            
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddDbContext<BooksDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IProductData, SqlProductData>();
+            services.AddScoped<IBookData, SqlBooKData>();
 
             services
                 .AddMvc()
